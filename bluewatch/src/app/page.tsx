@@ -25,12 +25,10 @@ const Home = () => {
         <nav aria-label="Global">
           <ul className="flex space-x-6 text-sm">
             <li>
-              <a
-                className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                href="#"
-              >
-                Notre équipe
-              </a>
+           
+                <Link className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75" href="/map/page">Map</Link>
+            
+              
             </li>
             <li>
               <a
@@ -42,12 +40,9 @@ const Home = () => {
             </li>
 
             <li>
-              <a
-                className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                href="#"
-              >
-                Bluewatch
-              </a>
+              
+                <Link  className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75" href="/species/page">Especes</Link>
+
             </li>
           </ul>
         </nav>
@@ -56,15 +51,41 @@ const Home = () => {
     </div>
   </div>
 </header>
-<video className="absolute inset-0 w-full h-full object-cover" autoPlay loop muted>
-    <source src="/assets/ocean.mp4" type="video/mp4" />
-    Votre navigateur ne prend pas en charge la balise vidéo.
-  </video>
-      <h1>Bienvenue sur notre application</h1>
-      <nav>
-        <Link href="/map/page">Map</Link>
-        <Link href="/species/page">Especes</Link>
-      </nav>
+<section className=" text-white">
+  <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
+    <div className="mx-auto max-w-3xl text-center">
+      <h1
+        className="bg-gradient-to-r from-teal-300 via-blue-500 to-indigo-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl"
+      >
+        Surveillez les Écosystèmes Marins.
+
+        <span className="sm:block"> Protégez la biodiversité. </span>
+      </h1>
+
+      <p className="mx-auto mt-4 max-w-xl sm:text-xl/relaxed">
+        Une plateforme interactive permettant de suivre l&apos;état des océans, d&apos;analyser les données 
+        environnementales et de contribuer à la préservation des milieux marins grâce à une carte en temps réel.
+      </p>
+
+      <div className="mt-8 flex flex-wrap justify-center gap-4">
+        <a
+          className="block w-full rounded-sm border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:ring-3 focus:outline-hidden sm:w-auto"
+          href="#"
+        >
+          Explorer la Carte
+        </a>
+
+        <a
+          className="block w-full rounded-sm border border-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-blue-600 focus:ring-3 focus:outline-hidden sm:w-auto"
+          href="#"
+        >
+          En savoir plus
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };
