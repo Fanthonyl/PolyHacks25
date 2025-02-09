@@ -3,7 +3,7 @@
 
   
 <!-- Mirrored from codescandy.com/dashui/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Jun 2022 16:42:58 GMT -->
-<?php	    include_once('partials/head.php'); ?>
+<?php	$video_path = "/bluewatch/PolyHacks25/video/caraibes.mp4"; include_once('partials/head.php'); ?>
 
   <body class="bg-light">
     <div id="db-wrapper">
@@ -178,14 +178,21 @@
   </nav>
 </div>
         <!-- Container fluid -->
-        <div class="bg-primary pt-10 pb-21"></div>
         <div>
-                      <input type="file" name="avatar">
-                        <button type="submit" class="btn btn-outline-white me-1">Change</button>
-                      </div>
-        
-      </div>
+    <div style="text-align: center;">
+      <h2>Dernière détection</h2>
+      <video width="640" height="360" controls>
+        <source src="<?php echo $video_path; ?>" type="video/mp4">
+        Votre navigateur ne supporte pas la lecture de vidéos.
+      </video>
     </div>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data" style="text-align: center;">
+        <input type="file" name="avatar">
+        <button type="submit" class="btn btn-outline-white me-1">Change</button>
+    </form>
+</div>
+
 
 
 

@@ -1,93 +1,105 @@
+<?php 
+require('php/config.php');
+include_once('partials/head.php');
+
+// Vérifier si un ID est passé dans l'URL
+if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+    $id = $_GET['id']; // Récupération de l'ID depuis l'URL
+
+    try {
+        // Requête pour récupérer l'élément avec l'ID dynamique
+        $sql = "SELECT * FROM animal_species WHERE id = :id"; 
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        // Vérifier si des résultats sont retournés
+        if ($stmt->rowCount() > 0) {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        } else {
+            echo "Aucun résultat trouvé pour l'ID $id.";
+            exit; // Arrêter l'exécution si aucun résultat n'est trouvé
+        }
+    } catch (PDOException $e) {
+        echo "Erreur de connexion : " . $e->getMessage();
+        exit;
+    }
+} else {
+    echo "ID non valide.";
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
-<?php include_once('partials/head.php'); ?>
-<style>
-            .card {
-                width: 750px; /* Ajuste la largeur selon la taille souhaitée */
-                height: auto; /* Hauteur automatique pour s'adapter au contenu */
-                justify-content: center; /* Centre le contenu */
-                margin: 200px;
-            }
-
-            .card-img-top {
-                object-fit: cover;  /* L'image couvre la zone sans déborder */
-                width: 100%;         /* Largeur de l'image égale à la largeur du conteneur */
-                height: 400px;       /* Réduit la hauteur de l'image */
-                display: block;      /* Permet de centrer l'image */
-                margin-left: auto;   /* Centre horizontalement l'image */
-                margin-right: auto; /* Centre le contenu */  /* Réduit la hauteur de l'image */
-            }
-
-            .card-body {
-                padding: 10px; /* Réduit l'espacement autour du texte */
-                justify-content: center; /* Centre le contenu */
-            }
-
-            .card-title {
-                font-size: 1.2em; /* Réduit la taille du titre */
-            }
-
-            .card-text {
-                font-size: 0.9em; /* Réduit la taille du texte */
-            }
-        </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo htmlspecialchars($row["name"]); ?></title>
+    <style>
+        .card {
+            width: 750px;
+            height: auto;
+            justify-content: center;
+            margin: 200px auto;
+        }
+        .card-img-top {
+            object-fit: cover;
+            width: 100%;
+            height: 400px;
+            display: block;
+            margin: 0 auto;
+        }
+        .card-body {
+            padding: 10px;
+            justify-content: center;
+        }
+        .card-title {
+            font-size: 1.2em;
+        }
+        .card-text {
+            font-size: 0.9em;
+        }
+    </style>
+</head>
 <body class="bg-light">
     <div id="db-wrapper">
-        <!-- Sidebar -->
         <?php include_once('partials/navbar.php'); ?>
-        <!-- Page content -->
         <div id="page-content">
             <div class="header @@classList">
-                <!-- navbar -->
                 <nav class="navbar-classic navbar navbar-expand-lg">
                     <a id="nav-toggle" href="#"><i data-feather="menu" class="nav-icon me-2 icon-xs"></i></a>
                     <div class="ms-lg-3 d-none d-md-none d-lg-block">
-                        <!-- Form -->
                         <form class="d-flex align-items-center">
-                            <input type="search" class="form-control" placeholder="Search" />
+                            <input type="search" class="form-control" placeholder="Search">
                         </form>
                     </div>
                 </nav>
             </div>
             <div>
-
-            <div ></div>
-        <div>
-                      <!-- Container fluid -->
-           
-    <!-- Image on Top -->
-    <div class="card">
-        <img src="assets/images/blog/1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Lionfish</h5>
-            <p class="card-text">
-                Lionfish are venomous marine fish native to the Indo-Pacific but invasive in the Atlantic and Caribbean.
-                Recognizable by their red, white, and brown striped bodies and long, fan-like pectoral fins, they are skilled ambush predators.
-            </p>
-            <ul class="card-text">
-                <li><strong>Scientific Name:</strong> Pterois</li>
-                <li><strong>Average Size:</strong> 30-40 cm (12-15 inches)</li>
-                <li><strong>Habitat:</strong> Coral reefs, rocky crevices, and seagrass beds</li>
-                <li><strong>Diet:</strong> Small fish, shrimp, and crustaceans</li>
-                <li><strong>Temperature Range:</strong> 22-28°C (72-82°F)</li>
-                <li><strong>Venomous Spines:</strong> Dorsal, pelvic, and anal spines</li>
-                <li><strong>Invasive Threat:</strong> Rapid reproduction and lack of natural predators</li>
-            </ul>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-    </div>
-        
-      </div>
-            
-</div>
-
+                <div class="card">
+                <img src="assets/images/blog/<?php echo $row['id']; ?>.jpg" class="card-img-top" alt="<?php echo htmlspecialchars($row['name']); ?>">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo htmlspecialchars($row["name"]); ?></h5>
+                        <p class="card-text"><?php echo htmlspecialchars($row["description"]); ?></p>
+                        <ul class="card-text">
+                            <li><strong>Nom scientifique:</strong> <?php echo htmlspecialchars($row["scientifical_name"]); ?></li>
+                            <li><strong>Taille:</strong> <?php echo htmlspecialchars($row["size"]); ?> cm</li>
+                            <li><strong>Poids:</strong> <?php echo htmlspecialchars($row["weight"]); ?> kg</li>
+                            <li><strong>Statut:</strong> <?php echo htmlspecialchars($row["statut"]); ?></li>
+                            <li><strong>Invasive Threat:</strong> <?php echo htmlspecialchars($row["name"]); ?></li>
+                        </ul>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- Scripts -->
     <?php include_once('partials/scripts.php'); ?>
 </body>
-
 </html>
+
+<?php 
+// Fermer la connexion
+$conn = null;
+?>
