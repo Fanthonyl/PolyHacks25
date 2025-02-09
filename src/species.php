@@ -13,23 +13,10 @@ try {
     if ($stmt->rowCount() > 0) {
         // Récupérer et afficher les résultats
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo "ID: " . $row["id"] . "<br>";
-            echo "Nom: " . $row["name"] . "<br>"; // Remplace 'nom_colonne' par le nom réel de la colonne
-            echo "Description: " . $row["size"] . "<br>"; // Remplace 'description_colonne' par le nom réel de la colonne
-            // Ajoute d'autres colonnes à afficher si nécessaire
-        }
-    } else {
-        echo "Aucun résultat trouvé pour l'ID 4.";
-    }
-} catch (PDOException $e) {
-    echo "Erreur de connexion : " . $e->getMessage();
-}
+    ?>
 
-// Fermer la connexion
-$conn = null;
-?>
 
- ?>
+ 
 
 
 
@@ -91,19 +78,30 @@ $conn = null;
     <div class="card">
         <img src="assets/images/blog/1.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Lionfish</h5>
+            <h5 class="card-title">     <?php
+    echo $row["name"]
+    ?></h5>
             <p class="card-text">
-                Lionfish are venomous marine fish native to the Indo-Pacific but invasive in the Atlantic and Caribbean.
-                Recognizable by their red, white, and brown striped bodies and long, fan-like pectoral fins, they are skilled ambush predators.
+            <?php
+    echo $row["description"]
+    ?>
             </p>
             <ul class="card-text">
-                <li><strong>Scientific Name:</strong> Pterois</li>
-                <li><strong>Average Size:</strong> 30-40 cm (12-15 inches)</li>
-                <li><strong>Habitat:</strong> Coral reefs, rocky crevices, and seagrass beds</li>
-                <li><strong>Diet:</strong> Small fish, shrimp, and crustaceans</li>
-                <li><strong>Temperature Range:</strong> 22-28°C (72-82°F)</li>
-                <li><strong>Venomous Spines:</strong> Dorsal, pelvic, and anal spines</li>
-                <li><strong>Invasive Threat:</strong> Rapid reproduction and lack of natural predators</li>
+                <li><strong>Nom scientifique:</strong> <?php
+    echo $row["scientifical_name"]
+    ?></li>
+                <li><strong>Taille:</strong> <?php
+    echo $row["size"]
+    ?>cm</li>
+                <li><strong>Poids:</strong> <?php
+    echo $row["weight"]
+    ?> kg</li>
+                <li><strong>Statut:</strong> <?php
+    echo $row["statut"]
+    ?></li>
+                <li><strong>Invasive Threat:</strong> <?php
+    echo $row["name"]
+    ?></li>
             </ul>
             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
@@ -122,3 +120,19 @@ $conn = null;
 </body>
 
 </html>
+<?php 
+            echo "ID: " . $row["id"] . "<br>";
+            echo "Nom: " . $row["name"] . "<br>"; // Remplace 'nom_colonne' par le nom réel de la colonne
+            echo "Description: " . $row["size"] . "<br>"; // Remplace 'description_colonne' par le nom réel de la colonne
+            // Ajoute d'autres colonnes à afficher si nécessaire
+        }
+    } else {
+        echo "Aucun résultat trouvé pour l'ID 4.";
+    }
+} catch (PDOException $e) {
+    echo "Erreur de connexion : " . $e->getMessage();
+}
+
+// Fermer la connexion
+$conn = null;
+?>
