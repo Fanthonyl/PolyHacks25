@@ -178,22 +178,53 @@
   </nav>
 </div>
         <!-- Container fluid -->
-        <div class="bg-primary pt-10 pb-21"></div>
-        <div id="map" style="width: 100%; height: 400px;"></div>
+        <div style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: lightblue;">
+        <div id="map" style="width: 50%; height: 400px;"></div>
         <script>
-        // Initialize the map
-        var map = L.map('map').setView([51.505, -0.09], 13); // Coordinates for the center of the map
+          // Initialiser la carte
+var map = L.map('map').setView([22.5, -89.5], 13); // Paris avec un zoom initial de 13
 
-        // Add tile layer (OpenStreetMap tiles)
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
+// Ajouter le Tile Layer ArcGIS World Imagery
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: '&copy; <a href="https://www.esri.com/">Esri</a> contributors',
+    maxZoom: 18, // Zoom maximum autorisé
+    minZoom: 2   // Zoom minimum autorisé
+}).addTo(map);
 
-        // Add a marker to the map
-        var marker = L.marker([51.505, -0.09]).addTo(map);
-        marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+// Ajouter un marqueur à Paris (ou à toute autre localisation de ton choix)
+L.marker([22.5, -89.5]).addTo(map)
+    .bindPopup('Golfe du Mexique!')
+    .openPopup();
+   
+    // Liste des cercles avec leurs coordonnées et rayons
+var circleData = [
+  {lat: 22.5, lon: -89.5, radius: 500000, color: 'blue', popup: "Golfe du Mexique"},
+    {lat: 40.7128, lon: -74.0060, radius: 500000, color: 'green', popup: "Océan Atlantique - New York"},
+    {lat: -33.8688, lon: 151.2093, radius: 500000, color: 'aqua', popup: "Océan Pacifique - Sydney"},
+    {lat: 36.7783, lon: -119.4179, radius: 500000, color: 'cyan', popup: "Océan Pacifique - Californie"},
+    {lat: -22.9133, lon: 149.0820, radius: 500000, color: 'lightblue', popup: "Grande Barrière de Corail"},
+    {lat: 20.5937, lon: 78.9629, radius: 500000, color: 'darkblue', popup: "Mer d'Arabie - Inde"},
+    {lat: 51.5074, lon: -0.1278, radius: 500000, color: 'royalblue', popup: "Mer du Nord - Londres"},
+    {lat: 10.0, lon: -83.0, radius: 500000, color: 'blueviolet', popup: "Mer des Caraïbes"},
+    {lat: -8.4095, lon: 115.1889, radius: 500000, color: 'deepskyblue', popup: "Océan Indien - Indonésie"},
+    {lat: 7.0, lon: 80.0, radius: 500000, color: 'mediumblue', popup: "Océan Indien - Sri Lanka"}
+];
+
+// Ajouter chaque cercle à la carte
+circleData.forEach(function(data) {
+    var circle = L.circle([data.lat, data.lon], {
+        color: data.color, 
+        fillColor: data.color, 
+        fillOpacity: 0.2, 
+        radius: data.radius
+    }).addTo(map);
+    
+    // Ajouter un popup pour chaque cercle
+    circle.bindPopup(data.popup);
+});
+
     </script>
-      </div>
+     </div>
     </div>
 
 
