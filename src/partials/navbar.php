@@ -8,7 +8,7 @@
         <ul class="navbar-nav flex-column" id="sideNavbar">
             <li class="nav-item">
                 <a class="nav-link has-arrow  active " href="index.php">
-                    <i data-feather="home" class="nav-icon icon-xs me-2"></i>  Dashboard
+                    <i data-feather="home" class="nav-icon icon-xs me-2"></i> Home
                 </a>
 
             </li>
@@ -20,14 +20,14 @@
 
             </li>
             <li class="nav-item">
-                <a class="nav-link has-arrow  active " href="index.php">
-                    <i data-feather="home" class="nav-icon icon-xs me-2"></i>  Dashboard
+                <a class="nav-link has-arrow  active " href="upload.php">
+                    <i data-feather="upload" class="nav-icon icon-xs me-2"></i> Upload
                 </a>
 
             </li>
             <li class="nav-item">
                 <a class="nav-link has-arrow  active " href="index.php">
-                    <i data-feather="home" class="nav-icon icon-xs me-2"></i>  Dashboard
+                    <i data-feather="home" class="nav-icon icon-xs me-2"></i>  Species
                 </a>
 
             </li>
