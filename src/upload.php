@@ -1,9 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
 
-  
-<!-- Mirrored from codescandy.com/dashui/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Jun 2022 16:42:58 GMT -->
-<?php	$video_path = "<assets.mp4"; include_once('partials/head.php'); ?>
+// Define API endpoint and query parameters
+$api_url = "http://127.0.0.1:8000/";
+$params = [
+    'videopath' => 'C:\wamp64\www\bluewatch\PolyHacks25\video\caraibes.mp4',
+    'outputpath' => 'C:\wamp64\www\bluewatch\PolyHacks25\video\output\caraibes.mp4',
+    'yolov5_repo_path' => 'C:\wamp64\www\bluewatch\PolyHacks25\Yolo weights\Yolo weights\yolov5',
+    'model_weights_path' => 'C:\wamp64\www\bluewatch\PolyHacks25\Yolo weights\Yolo weights\yolov5\Caraibes_weight_2\best.pt'
+];
+
+// Build query string
+$query_string = http_build_query($params);
+
+// Initialize cURL
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $api_url . "?" . $query_string);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HEADER, true); // To fetch headers
+
+// Execute the request
+$response = curl_exec($ch);
+
+// Get headers and body
+$header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+$headers = substr($response, 0, $header_size);
+$body = substr($response, $header_size);
+
+// Save the video to a file
+file_put_contents('downloaded_video.mp4', $body);
+
+// Extract detected objects from headers (if needed)
+preg_match('/X-Detected-Objects: (.*)/', $headers, $matches);
+if (!empty($matches)) {
+    $detected_objects = $matches[1];
+    echo "Detected Objects: $detected_objects\n";
+}
+
+// Close cURL
+curl_close($ch);
+
+echo "Video downloaded successfully as 'downloaded_video.mp4'.\n";
+
+$video_path = "assets/video/caraibes.webm"; include_once('partials/head.php'); ?>
 
   <body class="bg-light">
     <div id="db-wrapper">
@@ -182,7 +222,7 @@
     <div style="text-align: center;">
       <h2>Dernière détection</h2>
       <video width="640" height="360" controls>
-        <source src="<?php echo $video_path; ?>" type="video/mp4">
+        <source src="<?php echo $video_path; ?>" type="video/webm">
         Votre navigateur ne supporte pas la lecture de vidéos.
       </video>
     </div>

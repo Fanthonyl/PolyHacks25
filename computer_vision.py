@@ -2,8 +2,6 @@ import cv2 as cv
 import torch
 from collections import defaultdict
 import pathlib
-from PIL import Image
-from coord import get_gps_coordinates
 
 def process_video(video_path, output_path, yolov5_repo_path, model_weights_path):
     # Temporary fix for PosixPath on Windows
@@ -21,17 +19,17 @@ def process_video(video_path, output_path, yolov5_repo_path, model_weights_path)
     width = int(cap.get(cv.CAP_PROP_FRAME_WIDTH))
     height = int(cap.get(cv.CAP_PROP_FRAME_HEIGHT))
 
-    # Define the codec and create VideoWriter object
-    fourcc = cv.VideoWriter_fourcc(*'mp4v')  # Codec for MP4
+    # Define the codec and create VideoWriter object (WebM format)
+    fourcc = cv.VideoWriter_fourcc(*'VP80')  # VP8 codec for WebM
+    output_path = output_path.replace(".mp4", ".webm")  # Ensure WebM extension
     out = cv.VideoWriter(output_path, fourcc, fps, (width, height))
 
-    # Initialize trackers and initialize KCF tracker for each object
+    # Initialize trackers and variables
     trackers = []  # List to store tracker instances
     tracking_objects = []  # List to store tracking objects with ID and class
     class_counts = defaultdict(set)  # A dictionary to track unique IDs for each class
     detected_objects = []  # List to store detected objects with their details
 
-    # Process the video frame by frame
     frame_idx = 0
     confidence_threshold = 0.7  # Set a confidence threshold
     min_box_area = 300  # Minimum area for a valid bounding box
@@ -94,12 +92,15 @@ def process_video(video_path, output_path, yolov5_repo_path, model_weights_path)
 
                 # Extract timestamp, latitude, and longitude (dummy values for now)
                 timestamp = frame_idx / fps
-                latitude = 0.0  # Replace with actual latitude extraction
-                longitude = 0.0  # Replace with actual longitude extraction
-                
-                latitude, longitude, timestamp = get_gps_coordinates(video_path)
-                
-                detected_objects.append((model.names[class_id], latitude, longitude, timestamp))
+                latitude, longitude = 24.65419043428835, -92.91467494768753  # Update with actual GPS data if available
+
+                detected_objects.append({
+                    "class_name": model.names[class_id],
+                    "latitude": latitude,
+                    "longitude": longitude,
+                    "timestamp": timestamp,
+                    "track_id": obj['track_id']
+                })
             else:
                 print(f"Tracker failed for object {obj['track_id']}")
 
@@ -120,23 +121,13 @@ def process_video(video_path, output_path, yolov5_repo_path, model_weights_path)
 
     print(f"Video saved at: {output_path}")
     
-    return detected_objects
+    return output_path, detected_objects
 
-# Example usage
+""" # Example usage
 video_path = r'C:\wamp64\www\bluewatch\PolyHacks25\video\caraibes.mp4'
-output_path = r'C:\wamp64\www\bluewatch\PolyHacks25\video\output\caraibes.mp4'
+output_path = r'C:\wamp64\www\bluewatch\PolyHacks25\video\output\caraibes.webm'  # Change to WebM
 yolov5_repo_path = r'C:\wamp64\www\bluewatch\PolyHacks25\Yolo weights\Yolo weights\yolov5'
-model_weights_path = r'C:\wamp64\www\bluewatch\PolyHacks25\Yolo weights\Yolo weights\yolov5\Caraibes_weight\best.pt'
+model_weights_path = r'C:\wamp64\www\bluewatch\PolyHacks25\Yolo weights\Yolo weights\yolov5\Caraibes_weight_2\best.pt'
 
-import sys
-
-if __name__ == "__main__":
-    # Récupérez les arguments en ligne de commande
-    video_path = sys.argv[1]
-    output_path = sys.argv[2]
-    yolov5_repo_path = sys.argv[3]
-    model_weights_path = sys.argv[4]
-
-    # Appelez la fonction principale
-    detected_objects = process_video(video_path, output_path, yolov5_repo_path, model_weights_path)
-    print(detected_objects)
+processed_video, detected_objects = process_video(video_path, output_path, yolov5_repo_path, model_weights_path)
+print(detected_objects) """
