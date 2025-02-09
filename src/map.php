@@ -82,52 +82,48 @@ var markers = [
             { lat: 22.70, lon: -89.65, icon: lionfishIcon, text: '10 Lionfish', id: 1 },
 
     { lat: 24.55, lon: -87.45, icon: lionfishIcon, text: '5 Lionfish', id: 1 },
-    { lat: 24.50, lon: -87.50, icon: turtleIcon, text: '6 Turtles', id: 1 },
+    { lat: 24.50, lon: -87.50, icon: turtleIcon, text: '6 Turtles', id: 2 },
     { lat: 24.60, lon: -87.55, icon: wasteIcon, text: '2 Waste', id: 1 },
 
     { lat: 24.55, lon: -92.45, icon: lionfishIcon, text: '8 Lionfish', id: 1 },
-    { lat: 24.50, lon: -92.50, icon: turtleIcon, text: '9 Turtles', id: 1 },
+    { lat: 24.50, lon: -92.50, icon: turtleIcon, text: '9 Turtles', id: 2 },
     { lat: 24.60, lon: -92.55, icon: wasteIcon, text: '30 Waste', id: 1 },
 
     { lat: 10.55, lon: -82.45, icon: lionfishIcon, text: '5 Lionfish', id: 1 },
-    { lat: 10.50, lon: -82.50, icon: turtleIcon, text: '6 Turtles', id: 1 },
+    { lat: 10.50, lon: -82.50, icon: turtleIcon, text: '6 Turtles', id: 2 },
     { lat: 10.60, lon: -82.55, icon: wasteIcon, text: '30 Waste', id: 1 },
 
 
 
 
     { lat: 40.720, lon: -74.010, icon: lionfishIcon, text: '5 Lionfish', id: 1 },
-    { lat: 40.725, lon: -74.015, icon: turtleIcon, text: '6 Turtles', id: 1 },
+    { lat: 40.725, lon: -74.015, icon: turtleIcon, text: '6 Turtles', id: 2 },
     { lat: 40.730, lon: -74.020, icon: wasteIcon, text: '30 Waste', id: 1 },
-    { lat: 40.735, lon: -74.025, icon: turtleIcon, text: '4 Turtles', id: 1 },
+    { lat: 40.735, lon: -74.025, icon: turtleIcon, text: '4 Turtles', id: 2 },
     { lat: 40.740, lon: -74.030, icon: lionfishIcon, text: '7 Lionfish', id: 1 },
 
     { lat: -33.88, lon: 151.22, icon: lionfishIcon, text: '5 Lionfish', id: 1 },
-    { lat: -33.89, lon: 151.23, icon: turtleIcon, text: '6 Turtles', id: 1 },
+    { lat: -33.89, lon: 151.23, icon: turtleIcon, text: '6 Turtles', id: 2 },
     { lat: -33.90, lon: 151.24, icon: wasteIcon, text: '30 Waste', id: 1 },
-    { lat: -33.91, lon: 151.25, icon: turtleIcon, text: '4 Turtles', id: 1 },
+    { lat: -33.91, lon: 151.25, icon: turtleIcon, text: '4 Turtles', id: 2 },
     { lat: -33.92, lon: 151.26, icon: lionfishIcon, text: '7 Lionfish', id: 1 },
 
     { lat: 36.79, lon: -119.42, icon: lionfishIcon, text: '5 Lionfish', id: 1 },
-    { lat: 36.80, lon: -119.43, icon: turtleIcon, text: '6 Turtles', id: 1 },
+    { lat: 36.80, lon: -119.43, icon: turtleIcon, text: '6 Turtles', id: 2 },
     { lat: 36.81, lon: -119.44, icon: wasteIcon, text: '30 Waste', id: 1 },
-    { lat: 36.82, lon: -119.45, icon: turtleIcon, text: '4 Turtles', id: 1 },
+    { lat: 36.82, lon: -119.45, icon: turtleIcon, text: '4 Turtles', id: 2 },
     { lat: 36.83, lon: -119.46, icon: lionfishIcon, text: '7 Lionfish', id: 1 },
 
     { lat: -22.92, lon: 149.10, icon: lionfishIcon, text: '5 Lionfish', id: 1 },
-    { lat: -22.93, lon: 149.11, icon: turtleIcon, text: '6 Turtles', id: 1 },
+    { lat: -22.93, lon: 149.11, icon: turtleIcon, text: '6 Turtles', id: 2 },
     { lat: -22.94, lon: 149.12, icon: wasteIcon, text: '30 Waste', id: 1 },
-    { lat: -22.95, lon: 149.13, icon: turtleIcon, text: '4 Turtles', id: 1 },
+    { lat: -22.95, lon: 149.13, icon: turtleIcon, text: '4 Turtles', id: 2 },
     { lat: -22.96, lon: 149.14, icon: lionfishIcon, text: '7 Lionfish', id: 1 },
 
-    { lat: 20.60, lon: 78.97, icon: lionfishIcon, text: '5 Lionfish', id: 1 },
-    { lat: 20.61, lon: 78.98, icon: turtleIcon, text: '6 Turtles', id: 1 },
-    { lat: 20.62, lon: 78.99, icon: wasteIcon, text: '30 Waste', id: 1 },
-    { lat: 20.63, lon: 79.00, icon: turtleIcon, text: '4 Turtles', id: 1 },
-    { lat: 20.64, lon: 79.01, icon: lionfishIcon, text: '7 Lionfish', id: 1 },
+   
 
     { lat: 51.51, lon: -0.13, icon: lionfishIcon, text: '5 Lionfish', id: 1 },
-    { lat: 51.52, lon: -0.14, icon: turtleIcon, text: '6 Turtles', id: 1 },
+    { lat: 51.52, lon: -0.14, icon: turtleIcon, text: '6 Turtles', id: 2 },
     { lat: 51.53, lon: -0.15, icon: wasteIcon, text: '30 Waste', id: 1 },
     { lat: 51.54, lon: -0.16, icon: turtleIcon, text: '4 Turtles' , id: 1},
     { lat: 51.55, lon: -0.17, icon: lionfishIcon, text: '7 Lionfish', id: 1 }
@@ -147,16 +143,16 @@ var markers = [
    
     // Liste des cercles avec leurs coordonnées et rayons
 var circleData = [
-  {lat: 22.5, lon: -89.5, radius: 500000, color: 'blue', popup: "Golfe du Mexique"},
+  {lat: 22.5, lon: -89.5, radius: 500000, color: 'red', popup: "Golfe du Mexique"},
     {lat: 40.7128, lon: -74.0060, radius: 500000, color: 'green', popup: "Océan Atlantique - New York"},
-    {lat: -33.8688, lon: 151.2093, radius: 500000, color: 'aqua', popup: "Océan Pacifique - Sydney"},
-    {lat: 36.7783, lon: -119.4179, radius: 500000, color: 'cyan', popup: "Océan Pacifique - Californie"},
-    {lat: -22.9133, lon: 149.0820, radius: 500000, color: 'lightblue', popup: "Grande Barrière de Corail"},
-    {lat: 20.5937, lon: 78.9629, radius: 500000, color: 'darkblue', popup: "Mer d'Arabie - Inde"},
-    {lat: 51.5074, lon: -0.1278, radius: 500000, color: 'royalblue', popup: "Mer du Nord - Londres"},
-    {lat: 10.0, lon: -83.0, radius: 500000, color: 'blueviolet', popup: "Mer des Caraïbes"},
-    {lat: -8.4095, lon: 115.1889, radius: 500000, color: 'deepskyblue', popup: "Océan Indien - Indonésie"},
-    {lat: 7.0, lon: 80.0, radius: 500000, color: 'mediumblue', popup: "Océan Indien - Sri Lanka"}
+    {lat: -33.8688, lon: 151.2093, radius: 500000, color: 'red', popup: "Océan Pacifique - Sydney"},
+    {lat: 36.7783, lon: -119.4179, radius: 500000, color: 'green', popup: "Océan Pacifique - Californie"},
+    {lat: -22.9133, lon: 149.0820, radius: 500000, color: 'yellow', popup: "Grande Barrière de Corail"},
+    {lat: 20.5937, lon: 88.9629, radius: 500000, color: 'red', popup: "Mer d'Arabie - Inde"},
+    {lat: 51.5074, lon: -0.1278, radius: 500000, color: 'yellow', popup: "Mer du Nord - Londres"},
+    {lat: 10.0, lon: -83.0, radius: 500000, color: 'red', popup: "Mer des Caraïbes"},
+    {lat: -8.4095, lon: 115.1889, radius: 500000, color: 'green', popup: "Océan Indien - Indonésie"},
+    {lat: 7.0, lon: 80.0, radius: 500000, color: 'green', popup: "Océan Indien - Sri Lanka"}
 ];
 
 // Ajouter chaque cercle à la carte
