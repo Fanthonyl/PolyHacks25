@@ -179,10 +179,7 @@
 </div>
         <!-- Container fluid -->
         <div class="bg-primary pt-10 pb-21"></div>
-        <div>
-                      <input type="file" name="avatar">
-                        <button type="submit" class="btn btn-outline-white me-1">Change</button>
-                      </div>
+        
         
       </div>
     </div>
