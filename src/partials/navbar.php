@@ -15,7 +15,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link has-arrow  active " href="index.php">
+                <a class="nav-link has-arrow  active " href="map.php">
                     <i data-feather="map" class="nav-icon icon-xs me-2"></i>  Map
                 </a>
 
