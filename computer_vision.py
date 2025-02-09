@@ -3,6 +3,7 @@ import torch
 from collections import defaultdict
 import pathlib
 from PIL import Image
+from coord import get_gps_coordinates
 
 def process_video(video_path, output_path, yolov5_repo_path, model_weights_path):
     # Temporary fix for PosixPath on Windows
@@ -95,7 +96,9 @@ def process_video(video_path, output_path, yolov5_repo_path, model_weights_path)
                 timestamp = frame_idx / fps
                 latitude = 0.0  # Replace with actual latitude extraction
                 longitude = 0.0  # Replace with actual longitude extraction
-
+                
+                latitude, longitude, timestamp = get_gps_coordinates(video_path)
+                
                 detected_objects.append((model.names[class_id], latitude, longitude, timestamp))
             else:
                 print(f"Tracker failed for object {obj['track_id']}")
@@ -116,7 +119,7 @@ def process_video(video_path, output_path, yolov5_repo_path, model_weights_path)
         print(f"{model.names[class_id]}: {len(ids)} unique objects")
 
     print(f"Video saved at: {output_path}")
-
+    
     return detected_objects
 
 # Example usage
