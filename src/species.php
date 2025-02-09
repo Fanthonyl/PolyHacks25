@@ -1,7 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include_once('partials/head.php'); ?>
+<?php require('php/config.php');
+ include_once('partials/head.php');
+ 
+try {
+    // Requête pour récupérer l'élément avec l'ID 4
+    $sql = "SELECT * FROM animal_species WHERE id = 4"; // Remplace 'nom_de_ta_table' par le nom réel de la table
+    $stmt = $conn->query($sql);
+
+    // Vérifier si des résultats sont retournés
+    if ($stmt->rowCount() > 0) {
+        // Récupérer et afficher les résultats
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "ID: " . $row["id"] . "<br>";
+            echo "Nom: " . $row["name"] . "<br>"; // Remplace 'nom_colonne' par le nom réel de la colonne
+            echo "Description: " . $row["size"] . "<br>"; // Remplace 'description_colonne' par le nom réel de la colonne
+            // Ajoute d'autres colonnes à afficher si nécessaire
+        }
+    } else {
+        echo "Aucun résultat trouvé pour l'ID 4.";
+    }
+} catch (PDOException $e) {
+    echo "Erreur de connexion : " . $e->getMessage();
+}
+
+// Fermer la connexion
+$conn = null;
+?>
+
+ ?>
+
+
+
 <style>
             .card {
                 width: 750px; /* Ajuste la largeur selon la taille souhaitée */
