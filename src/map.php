@@ -195,6 +195,40 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/
 L.marker([22.5, -89.5]).addTo(map)
     .bindPopup('Golfe du Mexique!')
     .openPopup();
+
+  // Définir des icônes personnalisées
+var lionfishIcon = L.icon({
+    iconUrl: 'http://localhost/bluewatch/PolyHacks25/src/assets/images/minilogo/lionfish.png', // Exemple d'icône pour poisson-lion
+    iconSize: [40, 40],
+    iconAnchor: [20, 40],
+    popupAnchor: [0, -40]
+});
+
+var turtleIcon = L.icon({
+    iconUrl: 'http://localhost/bluewatch/PolyHacks25/src/assets/images/minilogo/turtle.png', // Exemple d'icône pour tortue
+    iconSize: [40, 40],
+    iconAnchor: [20, 40],
+    popupAnchor: [0, -40]
+});
+
+var wasteIcon = L.icon({
+    iconUrl: 'http://localhost/bluewatch/PolyHacks25/src/assets/images/minilogo/waste.png', // Exemple d'icône pour déchet
+    iconSize: [40, 40],
+    iconAnchor: [20, 40],
+    popupAnchor: [0, -40]
+});
+
+// Ajouter plusieurs icônes autour du marqueur principal
+var markers = [
+    { lat: 22.6, lon: -89.4, icon: lionfishIcon, text: '5 Lionfish' },
+    { lat: 22.4, lon: -89.6, icon: turtleIcon, text: '6 Turtles' },
+    { lat: 22.5, lon: -89.7, icon: wasteIcon, text: '30 Waste' }
+];
+
+markers.forEach(function(data) {
+    L.marker([data.lat, data.lon], { icon: data.icon }).addTo(map)
+        .bindPopup(data.text);
+});
    
     // Liste des cercles avec leurs coordonnées et rayons
 var circleData = [
