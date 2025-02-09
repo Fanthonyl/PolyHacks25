@@ -177,9 +177,12 @@
     </ul>
   </nav>
 </div>
+<!-- Titre principal -->
+<h1 style="text-align: center; margin-top: 20px; font-size: 3em; color: #333;">Carte Interactive des Océans</h1>
+
         <!-- Container fluid -->
         <div style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: lightblue;">
-        <div id="map" style="width: 50%; height: 400px;"></div>
+        <div id="map" style="width: 50%; height: 500px;"></div>
         <script>
           // Initialiser la carte
 var map = L.map('map').setView([22.5, -89.5], 3); // Paris avec un zoom initial de 13
