@@ -87,9 +87,9 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                             <li><strong>Taille:</strong> <?php echo htmlspecialchars($row["size"]); ?> cm</li>
                             <li><strong>Poids:</strong> <?php echo htmlspecialchars($row["weight"]); ?> kg</li>
                             <li><strong>Statut:</strong> <?php echo htmlspecialchars($row["statut"]); ?></li>
-                            <li><strong>Invasive Threat:</strong> <?php echo htmlspecialchars($row["name"]); ?></li>
+                           
                         </ul>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <p class="card-text"><small class="text-muted"><?php echo htmlspecialchars($row["date"]); ?></small></p>
                     </div>
                 </div>
             </div>

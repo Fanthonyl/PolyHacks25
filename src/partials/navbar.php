@@ -2,7 +2,7 @@
     <div class="nav-scroller">
         <!-- Brand logo -->
         <a class="navbar-brand" href="index.php" > 
-            <img style="width: 100px; /* Ajustez la largeur selon vos besoins */
+            <img style="width: 200px; /* Ajustez la largeur selon vos besoins */
         height: auto;" src="assets/images/brand/logo/logo.svg" alt="" />
         </a>
         <!-- Navbar nav -->
@@ -15,8 +15,8 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link has-arrow  active " href="index.php">
-                    <i data-feather="home" class="nav-icon icon-xs me-2"></i>  Dashboard
+                <a class="nav-link has-arrow  active " href="map.php">
+                    <i data-feather="map" class="nav-icon icon-xs me-2"></i>  Map
                 </a>
 
             </li>
@@ -26,12 +26,7 @@
                 </a>
 
             </li>
-            <li class="nav-item">
-                <a class="nav-link has-arrow  active " href="species.php">
-                    <i data-feather="home" class="nav-icon icon-xs me-2"></i>  Species
-                </a>
-
-            </li>
+     
        
 
 
