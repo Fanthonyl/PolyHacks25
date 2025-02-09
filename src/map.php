@@ -223,69 +223,75 @@ var wasteIcon = L.icon({
 
 // Ajouter plusieurs icônes autour du marqueur principal
 var markers = [
-    { lat: 22.55, lon: -89.45, icon: lionfishIcon, text: '50 Lionfish' },
-    { lat: 22.50, lon: -89.50, icon: turtleIcon, text: '60 Turtles' },
-    { lat: 22.60, lon: -89.55, icon: wasteIcon, text: '30 Waste' },
-    { lat: 22.65, lon: -89.60, icon: turtleIcon, text: '6 Turtles' },
-    { lat: 22.70, lon: -89.65, icon: lionfishIcon, text: '10 Lionfish' },
+  { lat: 22.55, lon: -89.45, icon: lionfishIcon, text: '50 Lionfish', id: 1 },
+            { lat: 22.50, lon: -89.50, icon: turtleIcon, text: '60 Turtles', id: 2 },
+            { lat: 22.60, lon: -89.55, icon: wasteIcon, text: '30 Waste', id: 3 },
+            { lat: 22.65, lon: -89.60, icon: turtleIcon, text: '6 Turtles', id: 2 },
+            { lat: 22.70, lon: -89.65, icon: lionfishIcon, text: '10 Lionfish', id: 1 },
 
-    { lat: 24.55, lon: -87.45, icon: lionfishIcon, text: '5 Lionfish' },
-    { lat: 24.50, lon: -87.50, icon: turtleIcon, text: '6 Turtles' },
-    { lat: 24.60, lon: -87.55, icon: wasteIcon, text: '2 Waste' },
+    { lat: 24.55, lon: -87.45, icon: lionfishIcon, text: '5 Lionfish', id: 1 },
+    { lat: 24.50, lon: -87.50, icon: turtleIcon, text: '6 Turtles', id: 1 },
+    { lat: 24.60, lon: -87.55, icon: wasteIcon, text: '2 Waste', id: 1 },
 
-    { lat: 24.55, lon: -92.45, icon: lionfishIcon, text: '8 Lionfish' },
-    { lat: 24.50, lon: -92.50, icon: turtleIcon, text: '9 Turtles' },
-    { lat: 24.60, lon: -92.55, icon: wasteIcon, text: '30 Waste' },
+    { lat: 24.55, lon: -92.45, icon: lionfishIcon, text: '8 Lionfish', id: 1 },
+    { lat: 24.50, lon: -92.50, icon: turtleIcon, text: '9 Turtles', id: 1 },
+    { lat: 24.60, lon: -92.55, icon: wasteIcon, text: '30 Waste', id: 1 },
 
-    { lat: 10.55, lon: -82.45, icon: lionfishIcon, text: '5 Lionfish' },
-    { lat: 10.50, lon: -82.50, icon: turtleIcon, text: '6 Turtles' },
-    { lat: 10.60, lon: -82.55, icon: wasteIcon, text: '30 Waste' },
-
-
+    { lat: 10.55, lon: -82.45, icon: lionfishIcon, text: '5 Lionfish', id: 1 },
+    { lat: 10.50, lon: -82.50, icon: turtleIcon, text: '6 Turtles', id: 1 },
+    { lat: 10.60, lon: -82.55, icon: wasteIcon, text: '30 Waste', id: 1 },
 
 
-    { lat: 40.720, lon: -74.010, icon: lionfishIcon, text: '5 Lionfish' },
-    { lat: 40.725, lon: -74.015, icon: turtleIcon, text: '6 Turtles' },
-    { lat: 40.730, lon: -74.020, icon: wasteIcon, text: '30 Waste' },
-    { lat: 40.735, lon: -74.025, icon: turtleIcon, text: '4 Turtles' },
-    { lat: 40.740, lon: -74.030, icon: lionfishIcon, text: '7 Lionfish' },
 
-    { lat: -33.88, lon: 151.22, icon: lionfishIcon, text: '5 Lionfish' },
-    { lat: -33.89, lon: 151.23, icon: turtleIcon, text: '6 Turtles' },
-    { lat: -33.90, lon: 151.24, icon: wasteIcon, text: '30 Waste' },
-    { lat: -33.91, lon: 151.25, icon: turtleIcon, text: '4 Turtles' },
-    { lat: -33.92, lon: 151.26, icon: lionfishIcon, text: '7 Lionfish' },
 
-    { lat: 36.79, lon: -119.42, icon: lionfishIcon, text: '5 Lionfish' },
-    { lat: 36.80, lon: -119.43, icon: turtleIcon, text: '6 Turtles' },
-    { lat: 36.81, lon: -119.44, icon: wasteIcon, text: '30 Waste' },
-    { lat: 36.82, lon: -119.45, icon: turtleIcon, text: '4 Turtles' },
-    { lat: 36.83, lon: -119.46, icon: lionfishIcon, text: '7 Lionfish' },
+    { lat: 40.720, lon: -74.010, icon: lionfishIcon, text: '5 Lionfish', id: 1 },
+    { lat: 40.725, lon: -74.015, icon: turtleIcon, text: '6 Turtles', id: 1 },
+    { lat: 40.730, lon: -74.020, icon: wasteIcon, text: '30 Waste', id: 1 },
+    { lat: 40.735, lon: -74.025, icon: turtleIcon, text: '4 Turtles', id: 1 },
+    { lat: 40.740, lon: -74.030, icon: lionfishIcon, text: '7 Lionfish', id: 1 },
 
-    { lat: -22.92, lon: 149.10, icon: lionfishIcon, text: '5 Lionfish' },
-    { lat: -22.93, lon: 149.11, icon: turtleIcon, text: '6 Turtles' },
-    { lat: -22.94, lon: 149.12, icon: wasteIcon, text: '30 Waste' },
-    { lat: -22.95, lon: 149.13, icon: turtleIcon, text: '4 Turtles' },
-    { lat: -22.96, lon: 149.14, icon: lionfishIcon, text: '7 Lionfish' },
+    { lat: -33.88, lon: 151.22, icon: lionfishIcon, text: '5 Lionfish', id: 1 },
+    { lat: -33.89, lon: 151.23, icon: turtleIcon, text: '6 Turtles', id: 1 },
+    { lat: -33.90, lon: 151.24, icon: wasteIcon, text: '30 Waste', id: 1 },
+    { lat: -33.91, lon: 151.25, icon: turtleIcon, text: '4 Turtles', id: 1 },
+    { lat: -33.92, lon: 151.26, icon: lionfishIcon, text: '7 Lionfish', id: 1 },
 
-    { lat: 20.60, lon: 78.97, icon: lionfishIcon, text: '5 Lionfish' },
-    { lat: 20.61, lon: 78.98, icon: turtleIcon, text: '6 Turtles' },
-    { lat: 20.62, lon: 78.99, icon: wasteIcon, text: '30 Waste' },
-    { lat: 20.63, lon: 79.00, icon: turtleIcon, text: '4 Turtles' },
-    { lat: 20.64, lon: 79.01, icon: lionfishIcon, text: '7 Lionfish' },
+    { lat: 36.79, lon: -119.42, icon: lionfishIcon, text: '5 Lionfish', id: 1 },
+    { lat: 36.80, lon: -119.43, icon: turtleIcon, text: '6 Turtles', id: 1 },
+    { lat: 36.81, lon: -119.44, icon: wasteIcon, text: '30 Waste', id: 1 },
+    { lat: 36.82, lon: -119.45, icon: turtleIcon, text: '4 Turtles', id: 1 },
+    { lat: 36.83, lon: -119.46, icon: lionfishIcon, text: '7 Lionfish', id: 1 },
 
-    { lat: 51.51, lon: -0.13, icon: lionfishIcon, text: '5 Lionfish' },
-    { lat: 51.52, lon: -0.14, icon: turtleIcon, text: '6 Turtles' },
-    { lat: 51.53, lon: -0.15, icon: wasteIcon, text: '30 Waste' },
-    { lat: 51.54, lon: -0.16, icon: turtleIcon, text: '4 Turtles' },
-    { lat: 51.55, lon: -0.17, icon: lionfishIcon, text: '7 Lionfish' }
+    { lat: -22.92, lon: 149.10, icon: lionfishIcon, text: '5 Lionfish', id: 1 },
+    { lat: -22.93, lon: 149.11, icon: turtleIcon, text: '6 Turtles', id: 1 },
+    { lat: -22.94, lon: 149.12, icon: wasteIcon, text: '30 Waste', id: 1 },
+    { lat: -22.95, lon: 149.13, icon: turtleIcon, text: '4 Turtles', id: 1 },
+    { lat: -22.96, lon: 149.14, icon: lionfishIcon, text: '7 Lionfish', id: 1 },
+
+    { lat: 20.60, lon: 78.97, icon: lionfishIcon, text: '5 Lionfish', id: 1 },
+    { lat: 20.61, lon: 78.98, icon: turtleIcon, text: '6 Turtles', id: 1 },
+    { lat: 20.62, lon: 78.99, icon: wasteIcon, text: '30 Waste', id: 1 },
+    { lat: 20.63, lon: 79.00, icon: turtleIcon, text: '4 Turtles', id: 1 },
+    { lat: 20.64, lon: 79.01, icon: lionfishIcon, text: '7 Lionfish', id: 1 },
+
+    { lat: 51.51, lon: -0.13, icon: lionfishIcon, text: '5 Lionfish', id: 1 },
+    { lat: 51.52, lon: -0.14, icon: turtleIcon, text: '6 Turtles', id: 1 },
+    { lat: 51.53, lon: -0.15, icon: wasteIcon, text: '30 Waste', id: 1 },
+    { lat: 51.54, lon: -0.16, icon: turtleIcon, text: '4 Turtles' , id: 1},
+    { lat: 51.55, lon: -0.17, icon: lionfishIcon, text: '7 Lionfish', id: 1 }
 ];
 
 
-markers.forEach(function(data) {
-    L.marker([data.lat, data.lon], { icon: data.icon }).addTo(map)
-        .bindPopup(data.text);
-});
+        // Ajouter chaque marqueur sur la carte
+        markers.forEach(function(marker) {
+            // Construire l'URL pour species.php en fonction de l'ID de l'espèce
+            var popupContent = '<h3>' + marker.text + '</h3>' +
+                               '<p><a href="species.php?id=' + marker.id + '" target="_blank">Voir les détails</a></p>';
+
+            var createdMarker = L.marker([marker.lat, marker.lon], {icon: marker.icon}).addTo(map);
+            createdMarker.bindPopup(popupContent);
+        });
+
    
     // Liste des cercles avec leurs coordonnées et rayons
 var circleData = [
