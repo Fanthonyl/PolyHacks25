@@ -9,7 +9,7 @@ try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
     // Définir le mode d'erreur PDO à Exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully to the database 'bluewatch'.";
+    
 }
 catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
