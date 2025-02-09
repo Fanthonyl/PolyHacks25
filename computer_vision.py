@@ -128,5 +128,15 @@ output_path = r'C:\wamp64\www\bluewatch\PolyHacks25\video\output\caraibes.mp4'
 yolov5_repo_path = r'C:\wamp64\www\bluewatch\PolyHacks25\Yolo weights\Yolo weights\yolov5'
 model_weights_path = r'C:\wamp64\www\bluewatch\PolyHacks25\Yolo weights\Yolo weights\yolov5\Caraibes_weight\best.pt'
 
-detected_objects = process_video(video_path, output_path, yolov5_repo_path, model_weights_path)
-print(detected_objects)
+import sys
+
+if __name__ == "__main__":
+    # Récupérez les arguments en ligne de commande
+    video_path = sys.argv[1]
+    output_path = sys.argv[2]
+    yolov5_repo_path = sys.argv[3]
+    model_weights_path = sys.argv[4]
+
+    # Appelez la fonction principale
+    detected_objects = process_video(video_path, output_path, yolov5_repo_path, model_weights_path)
+    print(detected_objects)

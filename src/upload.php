@@ -3,7 +3,7 @@
 
   
 <!-- Mirrored from codescandy.com/dashui/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Jun 2022 16:42:58 GMT -->
-<?php	$video_path = "/bluewatch/PolyHacks25/video/caraibes.mp4"; include_once('partials/head.php'); ?>
+<?php	$video_path = "<assets.mp4"; include_once('partials/head.php'); ?>
 
   <body class="bg-light">
     <div id="db-wrapper">
