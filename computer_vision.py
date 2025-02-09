@@ -123,10 +123,10 @@ def process_video(video_path, output_path, yolov5_repo_path, model_weights_path)
     return detected_objects
 
 # Example usage
-video_path = r'C:/Users/basti/Dossiers en local/Codes locaux/PolyHacks25/Data/Videos/turtle_plastic.mp4'
-output_path = r'C:/Users/basti/Dossiers en local/Codes locaux/PolyHacks25/Results/test_tard_turtle_plastic.mp4'
-yolov5_repo_path = r'C:/Users/basti/Dossiers en local/Codes locaux/PolyHacks25/Yolo weights/yolov5'
-model_weights_path = r'C://Users//basti//Dossiers en local//Codes locaux//PolyHacks25//Yolo weights//yolov5//Caraibes_weight_2//best.pt'
+video_path = r'C:\wamp64\www\bluewatch\PolyHacks25\video\caraibes.mp4'
+output_path = r'C:\wamp64\www\bluewatch\PolyHacks25\video\output\caraibes.mp4'
+yolov5_repo_path = r'C:\wamp64\www\bluewatch\PolyHacks25\Yolo weights\Yolo weights\yolov5'
+model_weights_path = r'C:\wamp64\www\bluewatch\PolyHacks25\Yolo weights\Yolo weights\yolov5\Caraibes_weight\best.pt'
 
 detected_objects = process_video(video_path, output_path, yolov5_repo_path, model_weights_path)
 print(detected_objects)
