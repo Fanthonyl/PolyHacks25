@@ -2,7 +2,7 @@
 <html lang="en">
 
   
-<!-- Mirrored from codescandy.com/dashui/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Jun 2022 16:42:58 GMT -->
+<!-- Mirrored from codescandy.com/dashui/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Jun 2022 16:42:58 GMT -->
 <?php	    include_once('partials/head.php'); ?>
 
   <body class="bg-light">
@@ -165,7 +165,7 @@
               </a>
             </li>
             <li>
-              <a class="dropdown-item" href="index.html">
+              <a class="dropdown-item" href="index.php">
                 <i class="me-2 icon-xxs dropdown-item-icon"
                   data-feather="power"></i>Sign Out
               </a>
@@ -936,5 +936,5 @@
   </body>
 
 
-<!-- Mirrored from codescandy.com/dashui/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Jun 2022 16:43:10 GMT -->
+<!-- Mirrored from codescandy.com/dashui/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Jun 2022 16:43:10 GMT -->
 </html>

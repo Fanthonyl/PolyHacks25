@@ -17,7 +17,10 @@
 <link href="assets/libs/prismjs/themes/prism-okaidia.css" rel="stylesheet">
 
 
-
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 
 
