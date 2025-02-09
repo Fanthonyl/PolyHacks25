@@ -3,7 +3,7 @@ import re
 
 def get_gps_coordinates(video_path):
     """ Récupère les coordonnées GPS et le timestamp d'une vidéo. """
-    EXIFTOOL_PATH = r"C:\Users\antho\Downloads\exiftool-13.18_64\exiftool-13.18_64\exiftool.exe"
+    EXIFTOOL_PATH = r"C:\wamp64\www\bluewatch\PolyHacks25\exiftool.exe"
 
     def convert_gps_to_decimal(degrees, minutes, seconds, direction):
         """ Convertit une coordonnée GPS en format décimal. """
