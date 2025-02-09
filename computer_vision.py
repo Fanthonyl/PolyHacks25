@@ -21,7 +21,7 @@ def process_video(video_path, output_path, yolov5_repo_path, model_weights_path)
 
     # Define the codec and create VideoWriter object (WebM format)
     fourcc = cv.VideoWriter_fourcc(*'VP80')  # VP8 codec for WebM
-    output_path = output_path.replace(".mp4", ".webm")  # Ensure WebM extension
+ #   output_path = output_path.replace(".mp4", ".webm")  # Ensure WebM extension
     out = cv.VideoWriter(output_path, fourcc, fps, (width, height))
 
     # Initialize trackers and variables

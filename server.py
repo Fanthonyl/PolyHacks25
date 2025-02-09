@@ -12,6 +12,6 @@ def read_root(videopath: str, outputpath: str, yolov5_repo_path: str, model_weig
     # Return the video file along with the detected objects as headers
     return FileResponse(
         outputpath, 
-        media_type="video/mp4", 
+        media_type="video/webm", 
         headers={"X-Detected-Objects": str(detected_objects)}
     )
